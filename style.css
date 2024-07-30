@@ -1,0 +1,766 @@
+body{
+  background: rgb(191, 220, 244);
+}
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 10000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 0;
+    left: 0;
+  }
+  
+  #gnav_btn {
+    position: absolute;
+    width: 100px;
+    height: 52px;
+    top: 40px;
+    right: 50px;
+    z-index: 10000;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /* border: 1px solid #333; */
+    border-radius: 50px;
+  }
+  #gnav_btn span {
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    position: absolute;
+    left: 30px;
+    height: 3px;
+    background-color: rgb(0, 208, 255);
+    width: 40%;
+  }
+  #gnav_btn span:nth-of-type(1) {
+    top: 15px;
+  }
+  #gnav_btn span:nth-of-type(2) {
+    top: 23px;
+  }
+  #gnav_btn span:nth-of-type(3) {
+    top: 31px;
+  }
+  #gnav_btn:hover {
+    background-color: rgba(27, 45, 122, 0.7);
+    border-color: #fff;
+  }
+  #gnav_btn:hover span {
+    background: #fff;
+  }
+  #gnav_btn.open {
+    border: 1px solid #fff;
+  }
+  #gnav_btn.open span {
+    background: #fff;
+  }
+  #gnav_btn.open span:nth-of-type(1) {
+    top: 18px;
+    left: 32px;
+    -webkit-transform: translateY(6px) rotate(-45deg);
+            transform: translateY(6px) rotate(-45deg);
+    width: 35%;
+  }
+  #gnav_btn.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+  #gnav_btn.open span:nth-of-type(3) {
+    top: 30px;
+    left: 32px;
+    -webkit-transform: translateY(-6px) rotate(45deg);
+            transform: translateY(-6px) rotate(45deg);
+    width: 35%;
+  }
+  #gnav_btn.open:hover span {
+    background: #fff;
+  }
+  
+  nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow-y: scroll;
+    color: #fff;
+    height: 100%;
+  }
+  nav::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #555;
+    opacity: 0.9;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    width: 82%;
+    max-width: 1000px;
+    margin: 160px auto 0;
+    line-height: 1.2;
+  }
+  .header-nav a {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 40px;
+    color: #32b8c6;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .5s;
+  }
+  .about{
+    width: 90%;
+    max-width: 1200px;
+    margin: 75px auto;
+    /* display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between; */
+    
+  }
+  .about .img{
+    width: 100%;
+  }
+  .about .img img{
+    width: 100%;
+    aspect-ratio: 56/34;
+    object-fit: cover;
+    margin-top: 44px;
+  }
+  .about-caption{
+    padding-top: 40px;
+    background-color: rgba(232, 162, 33, 0.89);
+    border-radius: 1%;
+    margin-top: 2.3%;
+    margin-right: -9%;
+    position: absolute;
+    bottom: 68%;
+    left: 60%;
+    padding: 3%;
+    scale: 1;
+    transition: all .5s;
+  }
+  .about-caption:hover{
+    transition: all .5s;
+    scale: 1.3;
+    /* transition-duration: 0.5s; */
+  }
+  .texts{
+    padding: 5%;
+    display: inline;
+  }
+  .about-name{
+    font-size: 40px;
+    color: #BFDCF4;
+    font-weight: 700;
+    display: inline;
+    
+  }
+
+  .about-job{
+    color: #ffffff;
+    margin-top: 4px;
+    font-size: 24px;
+    padding-left:3% ;
+    display: inline;
+  }
+  .about-hob{
+  color: #ffffff;
+  }
+  .about-text{
+    margin-top: 30px;
+    font-size: 18px;
+    display: none;
+    display: inline;
+  }
+  .about-text{
+    color: #ffffff;
+  }
+  .sns{
+    margin-top: 24px;
+    display: flex;
+    gap: 8px;
+  }
+  .about-caption h4{
+    margin-top: 18px;
+    font-size: 20px;
+    color: #BFDCF4;  
+  display: inline;
+}
+  .skill{
+    width: 90%;
+    max-width: 1200px;
+    margin:120px auto 0 ;
+    text-align: center;
+  }
+  
+  .skill h2{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color:#12B0B1
+  }
+  
+  .skill-content{
+    margin: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .skill-item{
+    width: 23%;
+    margin-bottom: 1%;
+  }
+  .skill-item img{
+    width: 100%;
+    aspect-ratio: 29/18;
+    
+    object-fit: contain;
+  border-radius: 8px;
+}
+.skill-item span{
+  font-size: 16px;
+  line-height: 1.2;
+  margin-top: 4px;
+  font-weight: 700;
+}
+/* business */
+#business .title {
+  font-size: 1.8rem;
+}
+
+
+/* カルーセルの外枠 */
+.carousel {
+  width: 520px;
+  height: 420px;
+  display: flex; /* 子要素を横に並べる */
+  overflow: hidden; /* はみ出た部分は表示しない */
+  margin: 0 auto; /* 水平方向中央寄せ */
+}
+/* カルーセル内の画像 */
+.carousel img {
+  margin: 0;
+  padding: 0;
+  display: block; /* imgタグの改行のすき間を消すため */
+}
+/* スクロールアニメーションのキーフレーム */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
+/* カルーセルの子要素にスクロールアニメーションを設定 */
+.carousel {
+  display: flex; /* 子要素を横に並べる */
+  overflow: hidden; /* はみ出た部分は表示しない */
+  width: 520px; /* カルーセルの幅 */
+  height: 420px; /* カルーセルの高さ */
+  margin: 0 auto; /* 水平方向中央寄せ */
+}
+
+
+.carousel .slide {
+  flex: 0 0 100%; /* スライドの幅を100%に設定 */
+}
+
+
+/* スクロールアニメーションを適用 */
+.carousel .slide {
+  animation: scroll 20s linear infinite;
+}
+/* business */
+#business .title {
+  font-size: 1.8rem;
+}
+
+
+/* カルーセルの外枠 */
+.carousel {
+  width: 520px;
+  height: 420px;
+  display: flex; /* 子要素を横に並べる */
+  overflow: hidden; /* はみ出た部分は表示しない */
+  margin: 0 auto; /* 水平方向中央寄せ */
+}
+/* カルーセル内の画像 */
+.carousel img {
+  margin: 0;
+  padding: 0;
+  display: block; /* imgタグの改行のすき間を消すため */
+}
+/* スクロールアニメーションのキーフレーム */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+/* カルーセルの子要素にスクロールアニメーションを設定 */
+.carousel {
+  display: flex; /* 子要素を横に並べる */
+  overflow: hidden; /* はみ出た部分は表示しない */
+  width: 520px; /* カルーセルの幅 */
+  height: 420px; /* カルーセルの高さ */
+  margin: 0 auto; /* 水平方向中央寄せ */
+}
+
+
+.carousel .slide {
+  flex: 0 0 100%; /* スライドの幅を100%に設定 */
+}
+
+
+/* スクロールアニメーションを適用 */
+.carousel .slide {
+  animation: scroll 20s linear infinite;
+}
+/* スライダーのスタイル */
+.carousel-container {
+  width: 520px; /* 任意の幅を指定 */
+  overflow: hidden;
+  margin: 0 auto;
+  border: 2px solid #ccc; /* 枠のスタイルを指定 */
+  border-radius: 8px; /* 枠の角を丸くする場合に指定 */
+  position: relative; /* 相対位置指定 */
+  margin-bottom: 30px;
+}
+
+
+/* カルーセルのスタイル */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+/* スライドのスタイルは変更なし */
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  text-align: center; /* タイトルを中央寄せ */
+}
+
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+
+.slide p {
+  font-size: large;
+}
+
+
+/* ボタンのスタイル */
+button {
+  margin-top: 10px;
+  cursor: pointer;
+  position: absolute; /* 絶対位置指定 */
+  bottom: -2%;
+  transform: translateY(-50%); /* ボタンの中央を揃える */
+  left: 50%; /* 任意の左側の余白を指定 */
+}
+
+
+/* スライダーのトランジションを管理するクラス */
+.slide-transition {
+  transition: transform 0.5s ease-in-out;
+}
+button {
+  position: absolute;
+  top: 45%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+.next {
+  right: 10px;
+  border-radius: 2px 0 0 2px;
+}
+
+
+.prev {
+  left: 10px;
+  border-radius: 0 2px 2px 0;
+}
+
+
+button:hover {
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+
+.indicator {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.indicator li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  list-style: none;
+  background-color: #fff;
+  border: 2px #000 solid;
+  cursor: pointer;
+}
+
+
+.indicator li.active {
+  background-color: #000;
+}
+
+
+/* Additional styles for the slider */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+.works-title:before{
+  content: "Works";
+  font-size: 120px;
+  color: #00dbf3;
+  opacity: 0.5;
+  margin-left: -120px;
+  z-index: -1;
+  font-weight: 700;
+}
+.works-title:active{
+  color: #e4f4fb;
+}
+.work-list li{
+   width: 24%;
+}
+.works-title{
+  padding: 90px;
+
+}
+.works-title h2{
+  margin-top: -50px;
+  display: block;
+  font-weight: 700;
+}
+.works{
+  position: relative;
+}
+.works h2{
+  position: relative;
+  z-index: 999;
+  font-size: 32px
+  
+}
+.work-list{
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.work-list img{
+  width: 100%;
+  aspect-ratio: 29/18;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.carousel{
+  margin-top: 40px;
+}
+.carousel{
+  position: absolute;
+    right: 24%;
+    bottom: -110px;
+
+}
+footer{
+  display: inline-block;
+  margin-top: 200px;
+}
+
+.fadeIn {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: opacity,transfrom;
+    transform: translate(0,50px);
+}
+.fadeIn.scrollin{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+/* .fade-up{
+     animation: fade-up .5s forwards;
+     opacity: 0;
+}
+@keyframes fade-up { 
+    /* 変数 */
+    /* from{
+        opacity: 0;
+        transform: translateY(30%);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+    } */
+    
+/* CSSのみでフェードアウトさせるコード */
+.header-nav a:hover{
+  color: red;
+}
+
+.fv img{
+  width: 100%;
+  }
+.fv{
+  position: relative;
+}
+#mask1 {
+  text-align: center;
+  width: 5%;
+  position: absolute;
+  left: 80%;
+  top: 15%;
+  font-weight: 700;
+}
+#mask1:hover{
+  filter: grayscale(100%);
+  transform: scale(1.2,1.2);
+  transition-duration: 0.5s;
+}
+#mask1:active{
+  filter: invert(1005);
+}
+.fv h3 {
+  font-size: 240%;
+  position: absolute;
+  left: 3%;
+  top: 83%;
+  font-weight: 700;
+  color: #c0e4cd;
+  /* filter: invert(100%); */
+}
+.fv h3:hover{
+   filter: grayscale(100%);
+}
+.fv h3:active{
+  filter: contrast(100);
+}
+
+.wave{
+position:fixed;
+width: 100%;
+bottom: 0;
+height:200px;/*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
+z-index: -1;
+}
+canvas{
+position: absolute;
+bottom: 0;
+left:0;
+width: 100%;
+}
+.footer{
+  width: 100%;
+}
+.footer p{
+  text-align: center;
+  font-size: 300px;
+}
+.about-caption h3{
+  text-align: center;
+  margin-right: 10px;
+  font-size: 21px;
+}
+
+/* <div class="wave">
+<canvas id="waveCanvas"></canvas>
+</div> */
+/* clip-path:url(#clip_id) */
+/* 先生の模範解答 */
+/* 
+
+.works{
+  position: relative;
+  padding-top: 100px;
+}
+.works-title{
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  font-size: 24px;
+  letter-spacing: .15em;
+}
+.works-title::before{
+  content: "works";
+  font-size: 160px;
+  font-weight: 900;
+  line-height: 1;
+  color: 12B0B1;
+  position: absolute;
+  bottom: 3%;
+  left: -20%;
+  z-index: -1;
+  opacity: .3;
+} 
+.work-list{
+  margin-top: 60px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.work-list li img{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+} */
+
+
+
+
+
+
+
+/* スマホ版 */
+
+@media screen and (max-width: 768px) {
+   .about{
+    flex-direction: column;
+    width: 80%;
+   }
+   .about-img{
+     width: 100%;
+   }
+   .about-name{
+    font-size: 38px;
+   }
+   .about-caption{
+    width: 100%;
+   }
+    .aboout-text{
+      font-size: 200px;
+      display: block;
+    }
+    .about-caption p{
+      font-size: 20px;
+    }
+   .carousel{
+    width: 40%;
+    position: absolute;
+    bottom: -110%;
+    left: 55%;
+   }
+  #gnav_btn{
+    border: 0 solid #ffffff;
+    right: 50px;
+    left: 75%;
+  }
+  .skill-content{
+    left: -60%;
+    margin: auto;
+    
+  }
+  .skill-item{
+    width: 40%;
+  }
+  .skill h2 {
+    font-size: 36px;
+  }
+  .work-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3%;
+  }
+  .work-list li{
+    width: 100%;
+  }
+  .works-title h2{
+    margin-top: -40px;
+  }
+  .works-title:before {
+    content: "Works";
+    font-size: 90px;
+    color: #00dbf3;
+    opacity: 0.5;
+    margin-left: -120px;
+    z-index: -1;
+    font-weight: 700;
+}
+}
